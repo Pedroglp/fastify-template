@@ -1,0 +1,20 @@
+{
+  "name": "fastisy-test",
+  "version": "1.0.0",
+  "description": "testing fastify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "server",
+    "test"
+  ],
+  "author": "Pedro Lancelloti",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^1.13.3",
+    "fastify-mongodb": "^1.0.0"
+  }
+}
