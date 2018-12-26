@@ -1,5 +1,5 @@
 async function myRoute (request, reply) {
-  const collection = database.collection('test')
+  const collection = this.mongo.db('local').collection('test')
   const result = await collection.findOne({ id: request.params.id })
 
   if (result.value === null) {

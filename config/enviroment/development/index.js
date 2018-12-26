@@ -1,6 +1,7 @@
 module.exports = {
   logger: true,
   db: {
-    url: 'mongodb://localhost:27017/',
+    url: 'mongodb://admin:password@localhost:27017/admin',
+    database:'local',
   }
 }
