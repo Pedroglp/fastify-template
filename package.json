@@ -1,5 +1,5 @@
 {
-  "name": "fastisy-test",
+  "name": "fastify-test",
   "version": "1.0.0",
   "description": "testing fastify",
   "main": "index.js",
