@@ -1,6 +1,7 @@
-const { db, logger } = require('./config/env')
+const { db, logger, jwt } = require('./config/env')
 const fastify = require('fastify')({logger})
 const routes = require('./api/routes.js')
+const bcrypt = require('bcrypt')
 
 fastify.register(require('fastify-mongodb'), {...db})
 
