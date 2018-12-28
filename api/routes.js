@@ -1,30 +1,16 @@
 // HANDLERS
-<<<<<<< HEAD
-const signupController = require('./controllers/singup.js')
-const authController = require('./controllers/auth.js')
-const userController = require('./controllers/users.js')
+const signupHandler = require('./handlers/singup.js')
+const authHandler = require('./handlers/auth.js')
+const userHandler = require('./handlers/users.js')
+
+// SCHEMAS
 
 // HOOKS
 const checkAuth = require('./hooks/checkAuth.js')
 
 // https://www.fastify.io/docs/latest/Routes/
 module.exports = [
-  { method: 'POST', path: '/signup', handler: signupController},
-  { method: 'POST', path: '/auth', handler: authController},
-  { method: 'GET', path: '/users', handler: userController, beforeHandler: checkAuth}
-=======
-const helloWorldHandler = require('./handlers/helloWorld.js')
-const myRouteHandler = require('./handlers/my-route.js')
-
-// SCHEMAS
-/** const mySchema = require('./schemas/mySchema.js) */
-
-// HOOKS
-/** const myHook = require('./hooks/myHook.js) */
-
-// https://www.fastify.io/docs/latest/Routes/
-module.exports = [
-  { method: 'GET', path: '/', handler: helloWorldHandler},
-  { method: 'GET', path: '/test/:id', handler: myRouteHandler}
->>>>>>> develop
+  { method: 'POST', path: '/signup', handler: signupHandler},
+  { method: 'POST', path: '/auth', handler: authHandler},
+  { method: 'GET', path: '/users', handler: userHandler, beforeHandler: checkAuth}
 ]
