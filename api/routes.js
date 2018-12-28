@@ -10,5 +10,5 @@ const checkAuth = require('./hooks/checkAuth.js')
 module.exports = [
   { method: 'POST', path: '/signup', handler: signupController},
   { method: 'POST', path: '/auth', handler: authController},
-  { method: 'GET', path: '/users', handler: userController, preValidation: checkAuth}
+  { method: 'GET', path: '/users', handler: userController, beforeHandler: checkAuth}
 ]
