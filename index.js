@@ -9,6 +9,7 @@ fastify.register(require('./config/routes-connector.js'), routes)
 
 fastify.register(require('fastify-jwt'), {...jwt})
 
+fastify.decorate('bcrypt', bcrypt)
 
 const start = async () => {
  try {

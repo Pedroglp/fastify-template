@@ -10,7 +10,7 @@ module.exports = async function(request, reply) {
 
     // check if password matchs
     try {
-      const authorized = await bcrypt.compare(password, user.passwordHash)
+      const authorized = await this.bcrypt.compare(password, user.passwordHash)
       if(authorized) {
         const token = {
           userId: user._id,
@@ -22,6 +22,6 @@ module.exports = async function(request, reply) {
         return reply.code(404).send({msg:'Login failed: incorrect username or password.'})
       }
     } catch(error) {
-      throw new Error('Error while logging in.')
+      throw new Error('Error while logging in. ')
     }
 }
