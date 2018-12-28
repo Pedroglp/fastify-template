@@ -5,4 +5,4 @@ COPY package.json /usr/src/app/
 RUN cd /usr/src/app; npm install
 COPY . /usr/src/app
 EXPOSE 3000
-CMD [ "npm", "run","dev" ]
+CMD [ "npm", "run","server:stage" ]
