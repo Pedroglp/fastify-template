@@ -1,6 +1,9 @@
+const bcrypt = require('bcrypt')
+
 module.exports = async function(request, reply) {
     const {username, password, email} = request.body
     const users = this.mongo.db.collection('users')
+    const passwordHash = await bcrypt.hash(password, 5)
     
     // checks if email/username is already in use
     const user = await users.findOne({$or:[{email}, {username}]})
@@ -11,7 +14,7 @@ module.exports = async function(request, reply) {
             : 'Username already in use.'}`})
     }
 
-    users.insert({username, password, email})
+    users.insert({username, passwordHash, email})
 
     return reply.code(202).send({ msg: 'Successfully registred.', username, email })
 }
