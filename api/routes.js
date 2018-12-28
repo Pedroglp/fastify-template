@@ -11,7 +11,7 @@ const checkAuth = require('./hooks/checkAuth.js')
 
 // https://www.fastify.io/docs/latest/Routes/
 module.exports = [
-  { method: 'POST', path: '/signup', handler: signupHandler, schema = signupSchema},
+  { method: 'POST', path: '/signup', handler: signupHandler, schema: signupSchema},
   { method: 'POST', path: '/auth', handler: authHandler},
   { method: 'GET', path: '/users', handler: userHandler, beforeHandler: checkAuth}
 ]
