@@ -1,4 +1,4 @@
-const { db, logger, jwt } = require('./config/enviroment')
+const { db, logger } = require('./config/env')
 const fastify = require('fastify')({logger})
 const routes = require('./api/routes.js')
 
@@ -10,7 +10,7 @@ fastify.register(require('fastify-jwt'), {...jwt})
 
 
 const start = async () => {
-  try {
+ try {
     await fastify.listen(3000, '0.0.0.0')
   } catch (err) {
     fastify.log.error(err)
