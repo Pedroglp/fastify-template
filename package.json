@@ -5,14 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< Updated upstream
-    "dev":"NODE_ENV=development node start.js",
-    "dev:docker":"docker-compose build && docker-compose up"
-=======
     "dev": "docker-compose up -d mongo && NODE_ENV=development node start.js",
     "stage": "docker-compose build && docker-compose up",
     "server:stage": "NODE_ENV=stage node start.js"
->>>>>>> Stashed changes
   },
   "keywords": [
     "js",
