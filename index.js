@@ -1,4 +1,4 @@
-const { db, logger } = require('./config/enviroment')
+const { db, logger } = require('./config/env')
 const fastify = require('fastify')({logger})
 const routes = require('./api/routes.js')
 
