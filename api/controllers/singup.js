@@ -11,8 +11,7 @@ module.exports = async function(request, reply) {
             'E-mail already in use.' 
             : 'Username already in use.'}`})
     }
-
     users.insert({username, passwordHash, email})
-
+    
     return reply.code(202).send({ msg: 'Successfully registred.', username, email })
 }
