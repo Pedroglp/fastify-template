@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"NODE_ENV=development node index.js",
+    "dev":"NODE_ENV=development node start.js",
     "dev:docker":"docker-compose build && docker-compose up"
   },
   "keywords": [

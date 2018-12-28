@@ -1,8 +1,15 @@
-const helloWorldController = require('./controllers/helloWorld.js')
-const myRouteController = require('./controllers/my-route.js')
+// HANDLERS
+const helloWorldHandler = require('./handlers/helloWorld.js')
+const myRouteHandler = require('./handlers/my-route.js')
+
+// SCHEMAS
+/** const mySchema = require('./schemas/mySchema.js) */
+
+// HOOKS
+/** const myHook = require('./hooks/myHook.js) */
 
 // https://www.fastify.io/docs/latest/Routes/
 module.exports = [
-  { method: 'GET', path: '/', handler: helloWorldController},
-  { method: 'GET', path: '/test/:id', handler: myRouteController}
+  { method: 'GET', path: '/', handler: helloWorldHandler},
+  { method: 'GET', path: '/test/:id', handler: myRouteHandler}
 ]
