@@ -18,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "fastify": "^1.13.3",
-    "fastify-mongodb": "^1.0.0"
+    "fastify-mongodb": "^1.0.0",
+    "mongoose": "^5.4.1"
   }
 }
