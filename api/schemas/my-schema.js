@@ -4,8 +4,8 @@ module.exports = {
     body: {
       type: 'object',
       properties: {
-        someKey: { type: 'string' },
-        someOtherKey: { type: 'number' }
+        name: { type: 'string' },
+        something: { type: 'number' }
       }
     },
   
