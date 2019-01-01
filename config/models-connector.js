@@ -1,15 +1,16 @@
 const fastifyPlugin = require('fastify-plugin')
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-async function routesConnector(fastify, config) {
-  // configs has: mongo address for connection and 
-  const { models } = config
-  // TODO check how to pass db configs or acess it through fastify
+async function routesConnector(fastify, models) {
   mongoose.connections.push(fastify.mongo)
   models.forEach(model => {
-    mongoose.model(model.name, model.schema)
+    const modelSchema = new Schema(model.schema)
+    modelSchema.methods = model.methods || {}
+    mongoose.model(model.name, modelSchema)
   });
   fastify.decorate('mongoose', mongoose)
+  fastify.decorate('models', mongoose.models)
 }
 
 module.exports = fastifyPlugin(routesConnector)
