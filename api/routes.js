@@ -1,6 +1,7 @@
 // HANDLERS
 const helloWorldHandler = require('./handlers/helloWorld.js')
-const myRouteHandler = require('./handlers/my-route.js')
+const getMyModelHandler = require('./handlers/get-my-model.js')
+const addMyModelHandler = require('./handlers/add-my-model.js')
 
 // SCHEMAS
 /** const mySchema = require('./schemas/mySchema.js) */
@@ -11,5 +12,6 @@ const myRouteHandler = require('./handlers/my-route.js')
 // https://www.fastify.io/docs/latest/Routes/
 module.exports = [
   { method: 'GET', path: '/', handler: helloWorldHandler},
-  { method: 'GET', path: '/test/:id', handler: myRouteHandler}
+  { method: 'GET', path: '/test/:something', handler: getMyModelHandler},
+  { method: 'POST', path:'/test', handler: addMyModelHandler}
 ]
