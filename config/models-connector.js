@@ -2,8 +2,9 @@ const fastifyPlugin = require('fastify-plugin')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-async function routesConnector(fastify, models) {
-  mongoose.connections.push(fastify.mongo)
+async function routesConnector(fastify, config) {
+  const { db, models } = config
+  mongoose.connect(db.url)
   models.forEach(model => {
     const modelSchema = new Schema(model.schema)
     modelSchema.method(model.methods || {})

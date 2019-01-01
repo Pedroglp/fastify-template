@@ -4,13 +4,11 @@ const routes = require('./api/routes.js')
 const schemas = require('./api/schemas/index.js')
 const models = require('./api/models')
 
-fastify.register(require('fastify-mongodb'), {...db})
-
 fastify.register(require('./config/schemas-connector.js'), schemas)
 
 fastify.register(require('./config/routes-connector.js'), routes)
 
-fastify.register(require('./config/models-connector.js'), models)
+fastify.register(require('./config/models-connector.js'), {db, models})
 
 const start = async () => {
   try {
