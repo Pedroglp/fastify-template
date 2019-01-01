@@ -5,8 +5,11 @@ module.exports.schema = {
     something: Number,
 }
 
-module.exports.methids = {
-    test: () => {
+module.exports.methods = {
+    test: function() {
         console.log('testing methods')
     },
+    saySomething: function() {
+        console.log(this.something)
+    }
 }
