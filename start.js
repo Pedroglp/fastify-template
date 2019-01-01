@@ -10,7 +10,7 @@ fastify.register(require('./config/schemas-connector.js'), schemas)
 
 fastify.register(require('./config/routes-connector.js'), routes)
 
-fastify.register(require('./config/models-connector.js'), {db, models})
+fastify.register(require('./config/models-connector.js'), models)
 
 const start = async () => {
   try {
@@ -19,7 +19,6 @@ const start = async () => {
     fastify.log.error(err)
     process.exit(1)
   }
-  console.log(fastify.mongoose)
 }
 
 start()
