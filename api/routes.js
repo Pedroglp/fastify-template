@@ -1,5 +1,5 @@
 // HANDLERS
-const signupHandler = require('./handlers/singup.js')
+const signupHandler = require('./handlers/signup.js')
 const authHandler = require('./handlers/auth.js')
 const userHandler = require('./handlers/users.js')
 
