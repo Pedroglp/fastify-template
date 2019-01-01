@@ -6,7 +6,7 @@ async function routesConnector(fastify, models) {
   mongoose.connections.push(fastify.mongo)
   models.forEach(model => {
     const modelSchema = new Schema(model.schema)
-    modelSchema.methods = model.methods || {}
+    modelSchema.method(model.methods || {})
     mongoose.model(model.name, modelSchema)
   });
   fastify.decorate('mongoose', mongoose)
