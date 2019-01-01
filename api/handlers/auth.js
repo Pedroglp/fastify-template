@@ -1,5 +1,5 @@
 module.exports = async function(request, reply) {
-    const {username, password} = request.body
+    const {username, password} = request.basicAuth
     const users = this.mongo.db.collection('users') 
     
     // checks if user exists
